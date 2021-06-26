@@ -10,9 +10,6 @@
 #include <compare>
 namespace mylib{
 
-
-
-
     template<typename T, typename U>
     concept RA_Iterator = requires(T a, U to_find){
         {*a} -> std::convertible_to<U>;
@@ -49,43 +46,6 @@ namespace mylib{
         }
         return end;
     }
-
-//    struct meow{
-//        int data;
-//        meow() = default;
-//        meow( int x) : data{x} {}
-//        meow( meow const &) = default;
-//        meow( meow &&) = default;
-//        ~meow() = default;
-//        meow & operator=(meow const & me) = default;
-//        std::strong_ordering operator<=>(int x ){return data <=> x;};
-//        auto operator <=>(meow const&) const = default;
-//
-//        bool operator ==(meow x){return data == x.data;}
-//        explicit operator int(){
-//            return data;
-//        }
-//        int & operator=(int x){ return data = x;}
-//    };
-//
-//
-//   [[depricated]] int main2() {
-//        std::vector my_vec{0,1,2,3,4,5,6,7,8,9,10};
-//
-//        std::vector<meow> strange{0,1,2,3,4,5,6,7,8,9,0,11};
-//        meow puurrrr{3};
-//
-//        std::cout << "meows " <<  static_cast<int>(*my_find(strange.begin(), strange.end(), puurrrr)) << '\n';
-//
-//        std::cout << "ints " << *my_find(my_vec.begin(), my_vec.end(), 3) << '\n';
-//
-//        std::cout << "ints - meow " << *my_find(my_vec.begin(), my_vec.end(), static_cast<int>(puurrrr)) << '\n';
-//
-//        std::string test_string = "abcdefghijklmnop";
-//
-//        std::cout << "string: " << *my_find(test_string.begin(), test_string.end(), 'c') << '\n';
-//    }
-
 
 } // mylib
 

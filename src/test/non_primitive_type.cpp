@@ -11,6 +11,7 @@
 
 
 TEST_CASE("binary search - int_wrapper"){
+    using namespace mylib::test;
     constexpr auto vector_size{0xffff};
     std::vector<int_wrapper> wrapper{};
     wrapper.reserve(vector_size);

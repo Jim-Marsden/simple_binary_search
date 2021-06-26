@@ -6,8 +6,6 @@
 #define SIMPLE_BINARY_SEARCH_BINARY_SEARCH_HPP
 #include <iterator>
 #include <concepts>
-#include <algorithm>
-#include <compare>
 namespace mylib{
 
     template<typename T, typename U>
@@ -31,9 +29,9 @@ namespace mylib{
 
     template<Findable find_t, RA_Iterator<find_t> iterator_t>
     iterator_t find(iterator_t const &begin, iterator_t const &end, find_t find) {
-        iterator_t temp_iter{begin}, local_begin{begin}, local_end{end};
+        iterator_t temp_iter{}, local_begin{begin}, local_end{end};
         unsigned long size{};
-        while (local_begin != local_end) {
+        do {
             size = std::distance(local_begin, local_end);
 
             if (temp_iter = local_begin + (size / 2); *temp_iter == find) {
@@ -43,7 +41,7 @@ namespace mylib{
             } else if (*temp_iter > find) {
                 local_end = temp_iter;
             }
-        }
+        } while (size > 1);
         return end;
     }
 

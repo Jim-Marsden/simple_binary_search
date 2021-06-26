@@ -9,7 +9,7 @@
 #include <vector>
 
 
-TEST_CASE("binary search int"){
+TEST_CASE("binary search - int"){
     constexpr auto vector_size{0xffff};
     std::vector<int> int_vec{};
     int_vec.reserve(vector_size);

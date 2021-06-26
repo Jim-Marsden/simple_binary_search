@@ -12,7 +12,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(Catch2)
 
 
-add_executable(simple_binary_search src/main.cpp binary_search.hpp src/test/string.cpp)
+add_executable(simple_binary_search src/main.cpp binary_search.hpp src/test/string.cpp src/test/non_primitive_type.cpp src/test/integer.cpp src/test/int_wrapper.cpp src/test/int_wrapper.hpp)
 target_link_libraries(simple_binary_search Catch2::Catch2)
 list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/contrib)
 include(CTest)
